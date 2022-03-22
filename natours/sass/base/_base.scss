@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* The fontSize we set here before was 10px so that we could convert every other px values to rem. This is beneficial becasue It will help scale down the elements or scale up the elements iun a gape based on the value. So, 100px of marfgin will be 100px / 10px and that is 10rem. Now, this is good but we do not want to do this becasue users may change the default browser font-size and this may affect how the page looks. So, normally, if font-size aint specified, the browser makes it 16px automatically  so, we will; have top change the font-size in the root elemnt to percentage and that will be 10px / 16px  and that is 0.625. multiply that value by 100 and you will get 62.5%. So, now, we will be using 62.5%. With this, 0.625 * 16px will give us 10px */
+}
+
+body {
+  box-sizing: border-box;
+}
