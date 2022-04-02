@@ -9,8 +9,38 @@
 html {
   font-size: 62.5%;
   /* The fontSize we set here before was 10px so that we could convert every other px values to rem. This is beneficial becasue It will help scale down the elements or scale up the elements iun a gape based on the value. So, 100px of marfgin will be 100px / 10px and that is 10rem. Now, this is good but we do not want to do this becasue users may change the default browser font-size and this may affect how the page looks. So, normally, if font-size aint specified, the browser makes it 16px automatically  so, we will; have top change the font-size in the root elemnt to percentage and that will be 10px / 16px  and that is 0.625. multiply that value by 100 and you will get 62.5%. So, now, we will be using 62.5%. With this, 0.625 * 16px will give us 10px */
+
+  // 1rem = 10px
+
+  // @include respond(phone) {
+  //   font-size: 50%;
+  // }
+
+  @include respond(tab-land) {
+    // width < 900?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    // width < 600?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3em;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: grey;
 }
